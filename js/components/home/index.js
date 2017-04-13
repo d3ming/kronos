@@ -2,8 +2,8 @@
 import React, { Component } from 'react';
 import { TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
-import { Actions, ActionConst } from 'react-native-router-flux';
-import { Container, Header, Title, Content, Text, Button, Icon, Left, Body, Right } from 'native-base';
+import { Actions } from 'react-native-router-flux';
+import { Container, Header, Title, Content, Text, Button, Icon, Left, Body } from 'native-base';
 import { Grid, Row } from 'react-native-easy-grid';
 
 import { setIndex } from '../../actions/list';
@@ -30,20 +30,14 @@ class Home extends Component {
       <Container style={styles.container}>
         <Header>
           <Left>
-            <Button transparent onPress={() => Actions.login({ type: ActionConst.RESET })}>
-              <Icon active name="power" />
+            <Button transparent onPress={this.props.openDrawer}>
+              <Icon active name="menu" />
             </Button>
           </Left>
 
           <Body>
-            <Title>{(this.props.name) ? this.props.name : 'Home'}</Title>
+            <Title>{this.props.name}</Title>
           </Body>
-
-          <Right>
-            <Button transparent onPress={this.props.openDrawer}>
-              <Icon active name="menu" />
-            </Button>
-          </Right>
         </Header>
 
         <Content>

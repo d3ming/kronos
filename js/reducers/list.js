@@ -8,12 +8,7 @@ export type State = {
 
 const initialState = {
   list: [
-    'React Native Starter Kit',
-    'React Native Router Flux',
-    'NativeBase Easy Grid',
-    'NativeBase',
-    'CodePush',
-    'Redux',
+    'Question 1',
   ],
   selectedIndex: undefined,
 };
