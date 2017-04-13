@@ -93,8 +93,8 @@ class AppNavigator extends Component {
         />
         <RouterWithRedux>
           <Scene key="root">
-            <Scene key="login" component={Login} hideNavBar initial />
-            <Scene key="home" component={Home} />
+            <Scene key="home" component={Home} initial hideNavBar />
+            <Scene key="login" component={Login} hideNavBar />
             <Scene key="blankPage" component={BlankPage} />
           </Scene>
         </RouterWithRedux>
