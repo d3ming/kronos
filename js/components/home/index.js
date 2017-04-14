@@ -16,7 +16,7 @@ class Home extends Component {
   static propTypes = {
     name: React.PropTypes.string,
     setIndex: React.PropTypes.func,
-    list: React.PropTypes.arrayOf(React.PropTypes.string),
+    questions: React.PropTypes.arrayOf(React.PropTypes.string),
     openDrawer: React.PropTypes.func,
   }
 
@@ -42,7 +42,7 @@ class Home extends Component {
 
         <Content>
           <Grid style={styles.mt}>
-            {this.props.list.map((item, i) =>
+            {this.props.questions.map((item, i) =>
               <Row key={i}>
                 <TouchableOpacity
                   style={styles.row}
@@ -68,7 +68,7 @@ function bindAction(dispatch) {
 
 const mapStateToProps = state => ({
   name: state.user.name,
-  list: state.list.list,
+  questions: state.list.questions,
 });
 
 export default connect(mapStateToProps, bindAction)(Home);

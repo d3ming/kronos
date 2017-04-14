@@ -3,12 +3,15 @@ import type { Action } from '../actions/types';
 import { SET_INDEX } from '../actions/list';
 
 export type State = {
-    list: string
+    questions: string
 }
 
 const initialState = {
-  list: [
-    'Question 1',
+  questions: [
+    'Are you stuffy today?',
+    'Are you stressed about work?',
+    'Did you climb stairs today?',
+    'Did you meditate today?'
   ],
   selectedIndex: undefined,
 };

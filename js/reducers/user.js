@@ -7,7 +7,7 @@ export type State = {
 }
 
 const initialState = {
-  name: '',
+  name: 'Dong or Xu',
 };
 
 export default function (state:State = initialState, action:Action): State {

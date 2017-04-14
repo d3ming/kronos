@@ -12,12 +12,12 @@ class BlankPage extends Component {
   static propTypes = {
     name: React.PropTypes.string,
     index: React.PropTypes.number,
-    list: React.PropTypes.arrayOf(React.PropTypes.string),
+    questions: React.PropTypes.arrayOf(React.PropTypes.string),
     openDrawer: React.PropTypes.func,
   }
 
   render() {
-    const { props: { name, index, list } } = this;
+    const { props: { name, index, questions } } = this;
 
     return (
       <Container style={styles.container}>
@@ -41,7 +41,7 @@ class BlankPage extends Component {
 
         <Content padder>
           <Text>
-            {(!isNaN(index)) ? list[index] : 'Create Something Awesome . . .'}
+            {(!isNaN(index)) ? questions[index] : 'Create Something Awesome . . .'}
           </Text>
         </Content>
       </Container>
@@ -58,7 +58,7 @@ function bindAction(dispatch) {
 const mapStateToProps = state => ({
   name: state.user.name,
   index: state.list.selectedIndex,
-  list: state.list.list,
+  questions: state.list.questions,
 });
 
 
