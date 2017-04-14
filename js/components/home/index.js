@@ -1,10 +1,8 @@
 
 import React, { Component } from 'react';
-import { TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
-import { Container, Header, Title, Content, Text, Button, Icon, Left, Body } from 'native-base';
-import { Grid, Row } from 'react-native-easy-grid';
+import { Container, Header, Title, Content, Text, Button, Icon, Left, Body, Card, CardItem } from 'native-base';
 
 import { setIndex } from '../../actions/list';
 import { openDrawer } from '../../actions/drawer';
@@ -16,7 +14,7 @@ class Home extends Component {
   static propTypes = {
     name: React.PropTypes.string,
     setIndex: React.PropTypes.func,
-    questions: React.PropTypes.arrayOf(React.PropTypes.string),
+    questions: React.PropTypes.arrayOf(React.PropTypes.object),
     openDrawer: React.PropTypes.func,
   }
 
@@ -41,18 +39,13 @@ class Home extends Component {
         </Header>
 
         <Content>
-          <Grid style={styles.mt}>
-            {this.props.questions.map((item, i) =>
-              <Row key={i}>
-                <TouchableOpacity
-                  style={styles.row}
-                  onPress={() => this.newPage(i)}
-                >
-                  <Text style={styles.text}>{item}</Text>
-                </TouchableOpacity>
-              </Row>
-            )}
-          </Grid>
+          {this.props.questions.map((question, i) =>
+            <Card key={i}>
+              <CardItem>
+                <Text style={styles.text}>{question.value}</Text>
+              </CardItem>
+            </Card>
+          )}
         </Content>
       </Container>
     );
